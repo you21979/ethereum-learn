@@ -5,7 +5,13 @@ var mnemonic = 'armed bundle pudding lazy strategy impulse where identify submit
 var password = '';
 var masterseed = bip39.mnemonicToSeed(mnemonic, password);
 var hdnode = hdkey.fromMasterSeed(masterseed);
-console.log(hdnode.derivePath("m/44'/60'/0'/0/0").getWallet().getAddressString())
-console.log(hdnode.derivePath("m/44'/60'/0'/0/1").getWallet().getAddressString())
-console.log(hdnode.derivePath("m/44'/60'/0'/0/2").getWallet().getAddressString())
-console.log(hdnode.derivePath("m/44'/60'/0'/0/3").getWallet().getAddressString())
+var getKeyPair = function(hdnode){
+    return {
+        "address" : hdnode.getWallet().getAddressString(),
+        "private" : hdnode.getWallet().getPrivateKeyString(),
+        "public" : hdnode.getWallet().getPublicKeyString(),
+    }
+}
+
+console.log(getKeyPair(hdnode.derivePath("m/44'/60'/0'/0/0")))
+console.log(getKeyPair(hdnode.derivePath("m/44'/60'/0'/0/1")))
