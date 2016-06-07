@@ -17,5 +17,6 @@ var getKeyPair = function(hdnode){
 }
 
 // cointype=60=eth
+// m / purpose' / coin_type' / account' / change / address_index
 console.log(getKeyPair(hdnode.derivePath("m/44'/60'/0'/0/0")))
 console.log(getKeyPair(hdnode.derivePath("m/44'/60'/0'/0/1")))
