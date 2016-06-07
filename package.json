@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bip39": "",
+    "web3": "",
     "ethereumjs-tx": "",
     "ethereumjs-wallet": "^0.6.0"
   },
